@@ -1,0 +1,63 @@
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  overflow: auto;
+}
+.title{
+    font-size: 2rem;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid;
+  width: 100%;
+  margin-bottom: 20px;
+}
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+table th {
+  background-color: #f2f2f2;
+}
+
+table thead {
+  border: 1px solid; /* Add a border to the thead */
+  /* Remove the bottom border */
+  position: sticky;
+  top: 0px;
+  background-color: #f2f2f2;
+}
+
+/* ! THem */
+.table-controllers,
+.table-sua,
+.table-them{
+    border-collapse: collapse;
+    width: 80%;
+}
+/* ! Sua */
+
+/* ! liệt kê */
+.form-control--lietke {
+  width: 100%;
+}
+.form-control--lietke .link-edit {
+    color: #666;
+    text-decoration: none ;
+}
+
+.form-control--lietke .link-remove {
+  color: #666;
+  text-decoration: none ;
+
+}
+
+/* ! liet ke san pham */
+.table-lietkesp{
+    
+}

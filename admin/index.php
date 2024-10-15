@@ -1,18 +1,44 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<?php
+
+define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
+
+?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" type="text/css" href="../css/styleadmin.css" >
-    <link rel="stylesheet" type="text/css" href="../css/admin_table.css" >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/admin_pages.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/admin_table.css">
+
 </head>
+
 <body>
-    <h3 class="title-admin">Chào mừng tới trang quản lý</h3>
+    <nav>
+
+        <?php
+
+        include("../config/config.php");
+        include("./layouts/menu.php");
+        ?>
+
+        <?php
+        include("./layouts/header.php");
+
+        ?>
+    </nav>
     <div class="wrapper">
-        
+        <?php
+        include("./layouts/main.php");
+        ?>
     </div>
+
 </body>
+
 </html>
