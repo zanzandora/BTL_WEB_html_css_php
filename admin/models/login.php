@@ -1,0 +1,35 @@
+<?php
+session_start();
+include("../../config/config.php");
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+     // Mã hóa mật khẩu trước khi kiểm tra
+
+    // Kiểm tra kết nối cơ sở dữ liệu
+    if (!$connect) {
+        die("Kết nối thất bại: " . mysqli_connect_error());
+    }
+
+    // Truy vấn SQL để kiểm tra username và password
+    $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password' LIMIT 1";
+    $result = mysqli_query($connect, $sql);
+
+    // Kiểm tra truy vấn SQL
+    if (!$result) {
+        die("Lỗi truy vấn: " . mysqli_error($connect));
+    }
+
+    $count = mysqli_num_rows($result);
+    if($count > 0){
+        $_SESSION['login'] = $username;
+        header("Location: ../index.php");
+    } else {
+        echo "<script>
+        alert('Tài khoản hoặc mật khẩu không chính xác !!!');
+        window.location.href = '../login_admin.php'; // Chuyển hướng sau khi hiển thị thông báo
+    </script>";
+    }
+}
+?>
