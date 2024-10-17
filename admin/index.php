@@ -5,7 +5,6 @@
 <?php
 
 define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
-
 ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -35,14 +35,14 @@ nav{
     position: absolute;
     display: flex;
     width: 100%;
-    /* margin: 0px -13px; */
-    padding: 0px 0px;
+    
+    
     height: 100vh;
     right: 0;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    overflow: scroll;
+    overflow-y: scroll;
     
 }
 .main .main__wrapper{

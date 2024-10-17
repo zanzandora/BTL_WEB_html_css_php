@@ -46,7 +46,13 @@
             </ul>
             <h3 class="header__bar-banner">shoes for women</h3>
             <ul class="header__bar-list">
-              
+              <li class="header__bar-item">
+                <a href="" class="header__bar-link-item">
+                  
+                Liên hệ
+                </a>
+                
+              </li>
               <li class="header__bar-item">
                 <a href="" class="header__bar-link-item">
                   <i class="icon fa-solid fa-question"></i>

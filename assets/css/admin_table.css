@@ -4,7 +4,6 @@
   align-items: center;
   flex-wrap: wrap;
   width: 80%;
-  overflow: auto;
 }
 .title{
     font-size: 2rem;
@@ -33,18 +32,20 @@ table thead {
   background-color: #f2f2f2;
 }
 
-/* ! THem */
 .table-controllers,
 .table-sua,
 .table-them{
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
+}
+/* ! THem */
+.form-control--themdanhmucsp{
+    width: 100%;
 }
 /* ! Sua */
 
 /* ! liệt kê */
 .form-control--lietke {
-  width: 100%;
 }
 .form-control--lietke .link-edit {
     color: #666;
