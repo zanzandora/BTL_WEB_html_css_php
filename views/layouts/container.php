@@ -18,7 +18,7 @@
             Mới nhất
           </button>
           <button class="home-filter__btn btn">Bán chạy</button>
-          <div class="select-input select-price">
+          <!-- <div class="select-input select-price">
             <span class="select-price__label">Giá</span>
             <i class="select-input__icon fa-regular fa-circle-down"></i>
             <ul class="select-price__list select-input__list">
@@ -29,8 +29,8 @@
                 <a href="" class="select-price__link select-input__link">Giá: Cao đến thấp</a>
               </li>
             </ul>
-          </div>
-          <div class="home-filter__page">
+          </div> -->
+          <!-- <div class="home-filter__page">
             <span class="home-filter__page-num">
               <span class="home-filter__page-current">1</span>/14
             </span>
@@ -42,9 +42,10 @@
                 <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- *Home Product -->
+         
         <?php
         include(BASE_PATH . "views/products/producs_display.php");
         ?>

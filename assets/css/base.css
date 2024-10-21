@@ -17,7 +17,12 @@ html{
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
-
+.flex--center{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* ! REPONSIVE */
 .grid{
     width: 1200px;
@@ -40,11 +45,26 @@ html{
     padding-right: 5px;
     width: 16.6667%;
 }
+.grid__column-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.3333%;
+}
+.grid__column-5{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 41.6667%;
+}
 .grid__column-10 {
     padding-left: 5px;
     padding-right: 5px;
    
     width: 83.3334%;
+}
+.grid__column-8{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 66.6667%;
 }
 .grid__column-2-4{
     padding-left: 5px;

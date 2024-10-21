@@ -20,32 +20,45 @@
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/main.css" />
   <?php
+  $view = isset($_GET['view']) ? $_GET['view'] : 'home';
 
-define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
-define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/BTL_WEB_html_css_php/');
+  define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
+  define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/BTL_WEB_html_css_php/');
+  ?>
 
-?>
-  
 </head>
 
 <body>
-  
+
   <div class="app">
-  <?php 
-    include("./views/layouts/header.php");
+    <?php
+    if ($view == 'faq') {
+      include "./views/layouts/faq/header_faq_page.php";
+    } else {
+      include "./views/layouts/header.php";
+    }
     ?>
-
-    <!-- ! CONTAINER -->
-    <?php 
-    include("./views/layouts/container.php");
+    <?php
+    
+    // Kiểm tra biến view để điều hướng giữa các trang
+    if ($view == 'product' && isset($_GET['id'])) {
+      // Bao gồm trang chi tiết sản phẩm
+      include './views/products/container_product_details.php';
+    }elseif ($view == 'cart') {
+      include './views/cart/container_cart.php';
+    }elseif ($view == 'faq' ) {
+      include "./views/layouts/faq/container_faq_page.php";
+    }elseif ($view == 'contact') {
+      include './views/layouts/contact/container_contact_page.php';
+    }
+    else {
+      include './views/layouts/container.php';
+    }
     ?>
-
     <?php
     include("./views/layouts/footer.php");
     ?>
   </div>
-
-
   <script src="./assets/js/notifycationSrink.js"></script>
   <script src="./assets/js/openModalAuthvsRegis.js"></script>
 </body>
