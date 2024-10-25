@@ -2,7 +2,7 @@
 
     <p class="title">Thêm sản phẩm</p>
     <table class="table-controllers" border = "1" >
-        <form action="modules/quanlysanpham/xuly.php" method="POST" enctype="multipart/form-data">
+        <form action="models/quanlysanpham/xuly.php" method="POST" enctype="multipart/form-data">
             <tr>
                 <td>Mã sản phẩm</td>
                 <td><input type="text" name="masanpham"></td>

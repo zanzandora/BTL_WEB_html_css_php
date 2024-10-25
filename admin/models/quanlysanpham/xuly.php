@@ -1,5 +1,8 @@
 <?php
-include('../../config/config.php');
+define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
+
+require_once('../../../config/config.php');
+
     $masanpham = $_POST['masanpham'];
     $tensanpham = $_POST['tensanpham'];
     $nhasanxuat = $_POST['nhasanxuat'];

@@ -1,5 +1,5 @@
 <?php
-    include('../../config/config.php');
+    include('../../../config/config.php');
     if(isset($_GET['code'])){
         $trangthai = $_GET['trangthai'];
         $code = $_GET['code'];

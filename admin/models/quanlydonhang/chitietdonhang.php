@@ -5,7 +5,7 @@
     $query = mysqli_query($connect,$sql);
 ?>
 <table class="table-controllers" border = "1" >
-    <form action="modules/quanlydanhmuc/xuly.php" method="POST">
+    <form action="models/quanlydanhmuc/xuly.php" method="POST">
         <tr>
             <th>ID</th>
             <th>Mã đơn hàng</th>

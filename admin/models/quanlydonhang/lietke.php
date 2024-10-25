@@ -6,7 +6,7 @@
 <div class="table-container">
 
     <table class="table-controllers" border = "1">
-        <form action="modules/quanlydanhmuc/xuly.php" method="POST">
+        <form action="models/quanlydanhmuc/xuly.php" method="POST">
             <tr>
                 <th>ID</th>
                 <th>Mã giỏ hàng</th>
@@ -32,7 +32,7 @@
                     <td>
                         <?php
                             if($row['trangthai']==1){
-                                echo '<a href="modules/quanlydonhang/xuly.php?code='.$row['madonhang'].'">Đơn hàng mới</a>';
+                                echo '<a href="models/quanlydonhang/xuly.php?code='.$row['madonhang'].'">Đơn hàng mới</a>';
                             }else{
                                 echo 'Đã thanh toán';
                             }
