@@ -322,9 +322,7 @@
 }
 
 /* *Modal Auth */
-.auth-form--register {
-  display: none;
-}
+
 .auth-form__container {
   padding: 0 32px;
   width: 500px;
@@ -443,6 +441,7 @@
 }
 
 /* *Header with Search */
+
 .header-with-search {
   height: var(--header-with-search-height);
   display: flex;
@@ -471,6 +470,9 @@
   flex: 1;
   height: 100%;
   position: relative;
+}
+.header__search--form{
+  flex:1;
 }
 /* *Search history */
 .header__search-input:focus ~ .header__search-history {
@@ -664,6 +666,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  mix-blend-mode: multiply;
 }
 .header__cart-heading {
   text-align: left;
@@ -1190,10 +1193,11 @@
 .products-added-into-cart__link {
   display: block;
   width: 8%;
-  margin-left: 68px;
+  margin: 20px 10px 20px 60px;
 }
 .products-added-into-cart__link-img {
   padding-top: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
   background-repeat: no-repeat;
   /* background-position:top center; */
   background-size: contain;
@@ -1255,6 +1259,9 @@
 .quantity-input__decrease {
   min-width: 40px;
   height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .products-added-into-car__total-price {
   width: 8%;
@@ -1394,6 +1401,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  line-height: 0;
   min-width: 150px;
 }
 .product-detail__action--buy:hover,
@@ -1457,3 +1465,51 @@
   justify-content: center;
   margin-bottom: 30px;
 }
+
+
+/* *Total Price label */
+.product-total-price{
+  background-color: white;
+  display: flex;
+  height: 100px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  border-radius: 5px;
+  margin: 20px 0;
+  position: sticky;
+  position: -webkit-sticky;
+  bottom: 0;
+  z-index: 2;
+}
+.product-total-price.product-total-price--active-pseudo::before{
+  background: linear-gradient(transparent, rgba(0, 0, 0, .06));
+  content: "";
+  height: 1.25rem;
+  left: 0;
+  position: absolute;
+  top: -1.25rem;
+  width: 100%;
+}
+.product-total-price__action--delete-all{
+  flex: 3;
+  padding-left: 60px;
+}
+.product-total-price__action--delete-all a{
+  padding: 10px 20px;
+}
+.product-total-price__label{
+  flex: 2;
+  padding-left: 4.4rem;
+}
+.product-total-price__action--buy{
+  flex: 1;
+}
+.product-total-price__action--buy a{
+  padding: 10px 20px;
+}
+
+

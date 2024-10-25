@@ -50,14 +50,14 @@ $query = mysqli_query($connect, $sql);
                             Nhật Bản
                         </div>
                     </div>
-                    <div class="product-item__favourite">
+                    <!-- <div class="product-item__favourite">
                         <i class="fa-solid fa-check"></i>
                         <span>Yêu thích</span>
-                    </div>
-                    <div class="product-item__sell-off">
+                    </div> -->
+                    <!-- <div class="product-item__sell-off">
                         <span class="product-item__sell-off-percent">43%</span>
                         <span class="product-item__sell-off-text">Giảm</span>
-                    </div>
+                    </div> -->
                 </a>
             </div>
         <?php } ?>

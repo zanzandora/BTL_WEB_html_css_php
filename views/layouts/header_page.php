@@ -7,26 +7,28 @@
                 class="header__banner-img" />
         </a>
     </div>
-    <div class="header__search">
-        <!-- *Search history -->
-        <div class="header__search-wrap">
-            <input
-                type="text"
-                class="header__search-input"
-                placeholder="Nhập để tìm kiếm sản phẩm" />
-            <div class="header__search-history">
-                <h3>Lịch sử tìm kiếm</h3>
-                <ul class="header__search-history-list">
-                    <li class="header__search-history-item">
-                        <a href="">Kem dưỡng da</a>
-                    </li>
-                    <li class="header__search-history-item">
-                        <a href="">Kem dưỡng da</a>
-                    </li>
-                </ul>
+    <form action="app.php?view=search" class="header__search--form" method="post">
+        <div class="header__search">
+            <!-- *Search history -->
+            <div class="header__search-wrap">
+                <input
+                    type="search"
+                    class="header__search-input"
+                    placeholder="Nhập để tìm kiếm sản phẩm"
+                    name="key" />
+                <!-- <div class="header__search-history">
+                    <h3>Lịch sử tìm kiếm</h3>
+                    <ul class="header__search-history-list">
+                        <li class="header__search-history-item">
+                            <a href="">Kem dưỡng da</a>
+                        </li>
+                        <li class="header__search-history-item">
+                            <a href="">Kem dưỡng da</a>
+                        </li>
+                    </ul>
+                </div> -->
             </div>
-        </div>
-        <div class="header__search-select">
+            <!-- <div class="header__search-select">
             <span>Trong shop</span>
             <i class="fa-regular fa-circle-down"></i>
 
@@ -41,92 +43,38 @@
                     <i class="fa-solid fa-check"></i>
                 </li>
             </ul>
-        </div>
-        <button class="header__search-btn">
-            <i class="fa-solid fa-search"></i>
-        </button>
-    </div>
-    <!-- *Cart icon -->
+        </div> -->
+            <button type="submit" class="header__search-btn" name="search">
 
-    <div class="header__cart">
-        <div class="header__cart-wrap">
+                <i class="fa-solid fa-search"></i>
+            </button>
+    </form>
+
+</div>
+
+<!-- *Cart icon -->
+<div class="header__cart">
+    <div class="header__cart-wrap">
+        <a href="app.php?view=cart" style="color: black;">
+
             <i class="fa-solid fa-cart-shopping"></i>
-            <span class="header__cart-notice">3</span>
-            <!-- ? No cart: header__cart-list--empty -->
+        </a>
+        <span class="header__cart-notice">
+        <?php
+        $tongsoluong = 0;
 
-            <div class="header__cart-list">
-                <img
-                    src="./assets/img/product-not-found.jpg"
-                    alt=""
-                    class="no_cart__img" />
+        // Kiểm tra xem giỏ hàng có sản phẩm không
+        if (isset($_SESSION['cart'])) {
+            foreach ($_SESSION['cart'] as $cart_item) {
+                // Cộng dồn số lượng của từng sản phẩm trong giỏ
+                $tongsoluong += $cart_item["soluong"];
+            }
+        }
 
-                <!-- *Cart when have Items -->
-                <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                <ul class="header__cart-list-item">
-                    <li class="header__cart-item">
-                        <img
-                            src="./assets/img/xe_rua.jpg"
-                            alt=""
-                            class="header__cart-img" />
-                        <div class="header__cart-item-info">
-                            <div class="header__cart-item-title">
-                                <h4>Xe rùa 2 chân đời mới siêu xịn xò con bò</h4>
-                                <article>
-                                    <span class="header__cart-item-price">100.000đ</span>
-                                    <span class="header__cart-item-mutil">x</span>
-                                    <span class="header__cart-item-qnt">2</span>
-                                </article>
-                            </div>
-                            <section>
-                                <span>Phân loại hàng: Xanh</span>
-                                <spann class="header__cart-item-remove">Xóa</spann>
-                            </section>
-                        </div>
-                    </li>
-                    <li class="header__cart-item">
-                        <img
-                            src="./assets/img/xe_rua.jpg"
-                            alt=""
-                            class="header__cart-img" />
-                        <div class="header__cart-item-info">
-                            <div class="header__cart-item-title">
-                                <h4>Xe rùa 2 chân đời mới</h4>
-                                <article>
-                                    <span class="header__cart-item-price">100.000đ</span>
-                                    <span class="header__cart-item-mutil">x</span>
-                                    <span class="header__cart-item-qnt">2</span>
-                                </article>
-                            </div>
-                            <section>
-                                <span>Phân loại hàng: Xanh</span>
-                                <spann class="header__cart-item-remove">Xóa</spann>
-                            </section>
-                        </div>
-                    </li>
-                    <li class="header__cart-item">
-                        <img
-                            src="./assets/img/xe_rua.jpg"
-                            alt=""
-                            class="header__cart-img" />
-                        <div class="header__cart-item-info">
-                            <div class="header__cart-item-title">
-                                <h4>Xe rùa 2 chân đời mới</h4>
-                                <article>
-                                    <span class="header__cart-item-price">100.000đ</span>
-                                    <span class="header__cart-item-mutil">x</span>
-                                    <span class="header__cart-item-qnt">2</span>
-                                </article>
-                            </div>
-                            <section>
-                                <span>Phân loại hàng: Xanh</span>
-                                <spann class="header__cart-item-remove">Xóa</spann>
-                            </section>
-                        </div>
-                    </li>
-                </ul>
-               
-                <a class="header__cart-list-btn-check-view btn btn--primary" href="app.php?view=cart">Xem giỏ hàng</a>
-            </div>
-        </div>
+        // Hiển thị tổng số lượng hoặc 0 nếu giỏ hàng trống
+        echo $tongsoluong > 0 ? $tongsoluong : "0";
+        ?>
+    </span>
+
     </div>
 </div>

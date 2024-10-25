@@ -8,10 +8,11 @@
       <ul class="header__bar-list">
         <li
           class="header__bar-item header__bar-item--has-qr header__bar-item--separate">
-          Cửa hàng bán giày dép phụ nữ
-
+          <a href="app.php" class="header__bar-link-item">
+            Cửa hàng bán giày dép phụ nữ
+          </a>
           <!-- Begin Header QR Code -->
-          <div class="header__qr">
+          <!-- <div class="header__qr">
             <img
               src="./assets/img/QR_code.png"
               alt="QR code"
@@ -30,7 +31,7 @@
                   class="header__qr-dowload-img" />
               </a>
             </div>
-          </div>
+          </div> -->
         </li>
         <li class="header__bar-item">
           <span class="header__bar-title">Kết nối</span>
@@ -48,30 +49,34 @@
 
         </li>
         <li class="header__bar-item">
-          <a href="app.php?view=faq" class="header__bar-link-item"> 
+          <a href="app.php?view=faq" class="header__bar-link-item">
             <i class="icon fa-solid fa-question"></i>
             Trợ giúp</a>
         </li>
 
         <li class="header__bar-item header__bar-user">
-          <img
+          <?php
+          session_start();
+          ?>
+          <!-- <img
             src="https://lh3.googleusercontent.com/ogw/AF2bZyi6bS34oZIR6WFQwy2LW7rsyOxov__SewjE1NKHpgi53w=s32-c-mo"
             alt=""
-            class="header__bar-user-img" />
-          <span class="header__bar-user-name">Minh Tu</span>
+            class="header__bar-user-img" /> -->
+          <span class="header__bar-user-name">
+            <?php
+            // Kiểm tra xem người dùng đã đăng nhập hay chưa
+            if (isset($_SESSION['username'])) {
+              echo $_SESSION['username']; // Hiển thị tên người dùng
+            } else {
+              echo 'Khách'; // Hiển thị tên mặc định nếu chưa đăng nhập
+            }
+            ?>
+          </span>
           <ul class="bar__user-menu">
-            <li class="bar__user-menu-item">
-              <a href="">Tài khoản của tôi</a>
-            </li>
-            <li class="bar__user-menu-item">
-              <a href="">Địa chỉ của tôi</a>
-            </li>
-            <li class="bar__user-menu-item">
-              <a href="">Đơn mua</a>
-            </li>
+            
 
             <li class="bar__user-menu-item bar__user-menu-item--separate">
-              <a href="">Đăng xuất</a>
+              <a href="<?php echo BASE_URL; ?>models/logout.php">Đăng xuất</a>
             </li>
           </ul>
         </li>
@@ -82,12 +87,12 @@
     // Kiểm tra xem người dùng đang ở trang giỏ hàng hay không
     if (isset($_GET['view']) && $_GET['view'] == 'cart') {
       // ! MAIN Header
-      include (BASE_PATH . "views/cart/header_cart.php"); 
+      include(BASE_PATH . "views/layouts/cart/header_cart.php");
     } else {
       // ! SEARCHING HEADer
-      include (BASE_PATH . "views/layouts/header_page.php"); 
+      include(BASE_PATH . "views/layouts/header_page.php");
     }
     ?>
-    
+
   </div>
 </header>

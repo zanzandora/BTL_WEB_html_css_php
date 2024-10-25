@@ -45,11 +45,13 @@
       // Bao gồm trang chi tiết sản phẩm
       include './views/products/container_product_details.php';
     }elseif ($view == 'cart') {
-      include './views/cart/container_cart.php';
+      include './views/layouts/cart/container_cart.php';
     }elseif ($view == 'faq' ) {
       include "./views/layouts/faq/container_faq_page.php";
     }elseif ($view == 'contact') {
       include './views/layouts/contact/container_contact_page.php';
+    }elseif ($view == 'thanks_for_buying') {
+      include './views/layouts/thanks_for_buying.php';
     }
     else {
       include './views/layouts/container.php';
@@ -58,9 +60,11 @@
     <?php
     include("./views/layouts/footer.php");
     ?>
+    
   </div>
   <script src="./assets/js/notifycationSrink.js"></script>
   <script src="./assets/js/openModalAuthvsRegis.js"></script>
+ 
 </body>
 
 </html>

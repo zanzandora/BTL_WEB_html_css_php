@@ -41,9 +41,22 @@
                     <input type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="input-field">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" name="phonenumber" placeholder="Phone Number" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="address" placeholder="Address" required>
+                </div>
+                <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="repassword" placeholder="Confirm Password" required>
+                </div>
+
                 <input type="submit" name="register" value="Sign Up" class="btn">
                 
                 

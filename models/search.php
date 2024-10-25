@@ -1,20 +1,16 @@
 <?php
-    $id = $_GET['id'];
-    $sql1 = "select * from sanpham where iddanhmuc='".$id."' order by sanpham.id DESC";
-    $query1 = mysqli_query($connect,$sql1);
-
-    $sql2 = "select * from danhmuc where iddanhmuc='".$id."' limit 1";
-    $query2 = mysqli_query($connect,$sql2);
-    $rowtittle = mysqli_fetch_array($query2);
+$key = "";
+    if(isset($_POST['search'])){
+        $key = $_POST['key'];
+    }
+    $sql = "select * from sanpham,danhmuc where sanpham.iddanhmuc=danhmuc.iddanhmuc and sanpham.tensanpham like '%".$key."%'";
+    $query = mysqli_query($connect,$sql);
 ?>
-        <div class="home-filter">
-
-<span class="home-filter__label">Sản phẩm : <?php echo $rowtittle['ten'] ?></span>
-        </div>
-<div class="grid__row">
+<div class="home-product">
+    <div class="grid__row">
         <?php
         // *lấy dữ liệu từ database và hiển thị ra trang web từng product 
-        while ($row = mysqli_fetch_array($query1)) {
+        while ($row = mysqli_fetch_array($query)) {
         ?>
             <div class="grid__column-2-4">
                 <a class="product-item" href="app.php?view=product&id=<?php echo $row['id'] ?>">
@@ -56,3 +52,9 @@
             </div>
         <?php } ?>
     </div>
+
+
+    
+
+
+</div>

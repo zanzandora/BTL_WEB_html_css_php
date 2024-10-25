@@ -23,6 +23,10 @@ if(isset($_POST['login'])){
 
     $count = mysqli_num_rows($result);
     if($count > 0){
+        $user = mysqli_fetch_assoc($result);
+        $_SESSION['username'] = $user['username']; // Lưu tên người dùng
+        $_SESSION['id'] = $user['id'];
+        
         $_SESSION['login'] = $username;
         header("Location: ../app.php");
     } else {

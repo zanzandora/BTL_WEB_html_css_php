@@ -3,25 +3,25 @@
         <div class="grid">
           <div class="grid__row">
             <div class="grid__column-2-4">
-              <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+              <h3 class="footer__heading">MY NAME</h3>
               <ul class="footer-list">
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Trung tâm mua hàng</a>
+                  <a href="" class="footer-item__link">Mai Minh Tú</a>
                   </li>
                 <li class="footer-item">
                   
-                  <a href="" class="footer-item__link">TickID Mail</a>
+                  <a href="" class="footer-item__link">Đoàn Hải Yến</a>
                 </li>
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
+                  <a href="" class="footer-item__link">Ngô Xuân Trường</a>
                 </li>
               </ul>
             </div>
             <div class="grid__column-2-4">
-              <h3 class="footer__heading">Giới thiệu</h3>
+              <h3 class="footer__heading">ID STUDENT</h3>
               <ul class="footer-list">
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Giới thiệu vè TickID Việt Nam</a>
+                  <a href="" class="footer-item__link">21103100963</a>
                 </li>
                 <li class="footer-item">
                   <a href="" class="footer-item__link">Tuyển dụng</a>
@@ -33,10 +33,10 @@
             </div>
             
             <div class="grid__column-2-4">
-              <h3 class="footer__heading">Danh mục</h3>
+              <h3 class="footer__heading">DATE OF BIRTH</h3>
               <ul class="footer-list">
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Trang điểm mặt</a>
+                  <a href="" class="footer-item__link">13 - 8 - 2003</a>
                 </li>
                 <li class="footer-item">
                   <a href="" class="footer-item__link">Trang điểm môi</a>
