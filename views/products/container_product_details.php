@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/BTL_WEB_html_css_php/config/config.php';
 $id = $_GET['id'];
-    $sql = "select * from sanpham,danhmuc where sanpham.iddanhmuc=danhmuc.iddanhmuc and sanpham.id='".$id."' limit 1";
+    $sql = "select sanpham.*, danhmuc.ten AS danhmuc_ten from sanpham,danhmuc where sanpham.iddanhmuc=danhmuc.iddanhmuc and sanpham.id='".$id."' limit 1";
     $query = mysqli_query($connect,$sql);
     while($row = mysqli_fetch_array($query)){
 ?>
@@ -13,7 +13,7 @@ $id = $_GET['id'];
     <div class="grid grid-container">
         <div class="product-detail">
             <div class="grid__column-5 flex--center">
-                <div class="product-detail__img " style="background-image: url(<?php echo BASE_URL; ?>assets/img/<?php echo $row['hinhanh'] ?>);"></div>
+                <div class="product-detail__img " style="background-image: url(<?php echo BASE_URL; ?>assets/img/goods/<?php echo $row['hinhanh'] ?>);"></div>
             </div>
             <div class="grid__column-8 ">
                 <form action="<?php echo BASE_URL; ?>models/add_into_cart.php?id=<?php echo $row['id'] ?>" method="post">
@@ -25,12 +25,33 @@ $id = $_GET['id'];
                         </div>
                         <div class="product-detail__price">
                             <p>
-                            <?php echo number_format($row['gia'],0,',','.').' VNĐ' ?>
+                            <?php 
+                            tinhGiaGiam($row['gia']);
+                            echo number_format($gia_giam,0,',','.').' VNĐ' ?>
                             </p>
                         </div>
                         <div class="product-detail__info-classify">
-                            <p>Phân loại hàng: <span>Đồ bộ ngủ nữ</span></p>
+                            <p>Phân loại hàng: <span><?php echo $row['danhmuc_ten'] ?></span></p>
                         </div>
+                        <div class="product-detail__info-classify">
+                            <p>Nhà sản xuất: <span><?php echo $row['nhasanxuat'] ?></span></p>
+                        </div>
+                        <div class="product-detail__info-classify">
+                            <p>Xuất xứ: <span><?php echo $row['xuatsu'] ?></span></p>
+                        </div>
+                        <div class="product-detail__info-classify">
+                            <p>Khối lượng: <span><?php echo $row['khoiluong'] ?>g</span></p>
+                        </div>
+                        <div class="product-detail__info-classify">
+                            <p>Chất liệu: <span><?php echo $row['chatlieu'] ?></span></p>
+                        </div>
+                        <div class="product-detail__info-classify">
+                            <p>Đế giày: <span><?php echo $row['degiay'] ?></span></p>
+                        </div>
+                        <div class="product-detail__info-classify">
+                            <p>Độ cao: <span><?php echo $row['cao'] ?> cm</span></p>
+                        </div>
+                       
                         <div class="product-detail__info-color">
                             <p>Màu sắc: 
                                 <span>

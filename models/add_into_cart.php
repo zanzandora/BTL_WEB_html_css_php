@@ -17,7 +17,7 @@
         foreach($_SESSION['cart'] as $cart_item){
             if($cart_item['id']!=$id){
                 $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'gia'=>$cart_item['gia']
-                ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
             }
             $_SESSION['cart'] = $product;
             header('Location:'.BASE_URL.'app.php?view=cart');
@@ -32,7 +32,7 @@
             //Khi không kích vào dấu công thì mang san phẩm sẽ được giữ nguyên.
             if($cart_item['id']!=$id){
                 $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'gia'=>$cart_item['gia']
-                ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                 $_SESSION['cart'] = $product;
             }
             else{
@@ -40,10 +40,10 @@
                 //khi cộng sản phẩm sẽ tạo 1 mảng mới với số lượng sản phẩm được thay đổi.
                 if($cart_item['soluong']<=99){
                     $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$tangsoluong,'gia'=>$cart_item['gia']
-                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                 }else{
                     $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'gia'=>$cart_item['gia']
-                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                 }
                 $_SESSION['cart'] = $product;
             }
@@ -57,7 +57,7 @@
             //Khi không kích vào dấu công thì mang san phẩm sẽ được giữ nguyên.
             if($cart_item['id']!=$id){
                 $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'gia'=>$cart_item['gia']
-                ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                 $_SESSION['cart'] = $product;
             }
             else{
@@ -65,10 +65,10 @@
                 //khi trừ sản phẩm sẽ tạo 1 mảng mới với số lượng sản phẩm được thay đổi.
                 if($cart_item['soluong']>=1){
                     $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$tangsoluong,'gia'=>$cart_item['gia']
-                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                 }else{
                     $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'gia'=>$cart_item['gia']
-                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                    ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                 }
                 $_SESSION['cart'] = $product;
             }
@@ -80,12 +80,12 @@
     if(isset($_POST['add_into_cart'])){
         $id = $_GET['id'];
         $soluong = 1;
-        $sql = "select * from sanpham where id='".$id."' limit 1";
+        $sql = "select sanpham.*, danhmuc.ten AS danhmuc_ten from sanpham,danhmuc where sanpham.iddanhmuc=danhmuc.iddanhmuc and sanpham.id='".$id."' limit 1";
         $query = mysqli_query($connect,$sql);
         $row = mysqli_fetch_array($query);
         if($row){
             $new [] = array('tensanpham'=>$row['tensanpham'],'id'=>$id,'soluong'=>$soluong,'gia'=>$row['gia'],'hinhanh'=>$row['hinhanh']
-            ,'masanpham'=>$row['masanpham']);
+            ,'masanpham'=>$row['masanpham'],'danhmuc_ten' => $row['danhmuc_ten']);
             /* Kiểm tra Session giỏ hàng */
             if(isset($_SESSION['cart'])){
                 $found = false;
@@ -93,12 +93,12 @@
                     /* Nếu dữ liệu bị trùng */
                     if($cart_item['id']==$id){
                         $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$soluong+1,'gia'=>$cart_item['gia']
-                        ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                        ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                         $found = true;
                     }else{
                         /* Nếu dữ liệu không trùng */
                         $product [] = array('tensanpham'=>$cart_item['tensanpham'],'id'=>$cart_item['id'],'soluong'=>$cart_item['soluong'],'gia'=>$cart_item['gia']
-                        ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham']);
+                        ,'hinhanh'=>$cart_item['hinhanh'],'masanpham'=>$cart_item['masanpham'],'danhmuc_ten' => $cart_item['danhmuc_ten']);
                     }
                 }
                 if($found == false){

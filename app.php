@@ -25,6 +25,12 @@
   define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
   define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/BTL_WEB_html_css_php/');
   ?>
+  <?php
+function tinhGiaGiam($gia) {
+    global $gia_giam;
+    $gia_giam = $gia * 0.6; // Giảm giá 40%
+}
+?>
 
 </head>
 
@@ -32,6 +38,7 @@
 
   <div class="app">
     <?php
+    
     if ($view == 'faq') {
       include "./views/layouts/faq/header_faq_page.php";
     } else {

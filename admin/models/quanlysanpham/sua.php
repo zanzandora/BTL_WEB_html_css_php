@@ -8,7 +8,7 @@
 <?php
     while($row = mysqli_fetch_array($query)){
 ?>
-    <form action="modules/quanlysanpham/xuly.php?id=<?php echo $row['id']?>" method="POST" enctype="multipart/form-data">
+    <form action="models/quanlysanpham/xuly.php?id=<?php echo $row['id']?>" method="POST" enctype="multipart/form-data">
         <tr>
             <td>Mã sản phẩm</td>
             <td><input type="text" name="masanpham" value="<?php echo $row['masanpham'] ?>"></td>
@@ -22,31 +22,39 @@
             <td><input type="text" name="nhasanxuat" value="<?php echo $row['nhasanxuat'] ?>"></td>
         </tr>
         <tr>
+            <td>Xuất xứ</td>
+            <td><input type="text" name="xuatxu" value="<?php echo $row['xuatsu'] ?>"></td>
+        </tr>
+        <tr>
             <td>Hình ảnh</td>
             <td>
                 <input type="file" name="hinhanh" value="<?php echo $row['hinhanh'] ?>">
-                <img src="modules/quanlysanpham/uploads/<?php echo $row['hinhanh']?>" width="100">
+                <img src="<?php echo BASE_URL; ?>assets/img/goods/<?php echo $row['hinhanh']?>" width="100">
             </td>
+        </tr>
+        <tr>
+            <td>Màu</td>
+            <td><input type="text" name="mau" value="<?php echo $row['mau'] ?>"></td>
         </tr>
         <tr>
             <td>Khối lượng</td>
             <td><input type="text" name="khoiluong" value="<?php echo $row['khoiluong'] ?>"></td>
         </tr>
         <tr>
-            <td>Dung tích xăng</td>
-            <td><input type="text" name="dungtich" value="<?php echo $row['dungtich'] ?>"></td>
+            <td>Kích cỡ</td>
+            <td><input type="text" name="kichco" value="<?php echo $row['kichco'] ?>"></td>
         </tr>
         <tr>
-            <td>Động cơ</td>
-            <td><input type="text" name="dongco" value="<?php echo $row['dongco'] ?>"></td>
+            <td>Chất liệu</td>
+            <td><input type="text" name="chatlieu" value="<?php echo $row['chatlieu'] ?>"></td>
         </tr>
         <tr>
-            <td>Công suất tối đa</td>
-            <td><input type="text" name="congsuat" value="<?php echo $row['congsuat'] ?>"></td>
+            <td>Đế giày</td>
+            <td><input type="text" name="degiay" value="<?php echo $row['degiay'] ?>"></td>
         </tr>
         <tr>
-            <td>Mô-men cực đại</td>
-            <td><input type="text" name="momen" value="<?php echo $row['momen'] ?>"></td>
+            <td>Độ cao</td>
+            <td><input type="text" name="cao" value="<?php echo $row['cao'] ?>"></td>
         </tr>
         <tr>
             <td>Giá sản phẩm</td>

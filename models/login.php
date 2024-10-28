@@ -13,7 +13,7 @@ if(isset($_POST['login'])){
     }
 
     // Truy vấn SQL để kiểm tra username và password
-    $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password' LIMIT 1";
+    $sql = "SELECT * FROM dangky WHERE tenkhachhang='$username' AND matkhau='$password' LIMIT 1";
     $result = mysqli_query($connect, $sql);
 
     // Kiểm tra truy vấn SQL
@@ -24,7 +24,7 @@ if(isset($_POST['login'])){
     $count = mysqli_num_rows($result);
     if($count > 0){
         $user = mysqli_fetch_assoc($result);
-        $_SESSION['username'] = $user['username']; // Lưu tên người dùng
+        $_SESSION['username'] = $user['tenkhachhang']; // Lưu tên người dùng
         $_SESSION['id'] = $user['id'];
         
         $_SESSION['login'] = $username;

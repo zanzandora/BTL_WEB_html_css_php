@@ -27,7 +27,7 @@
                     <td><?php echo $row['sodienthoai']?></td>
                     <td><?php echo $row['noidung']?></td>
                     <td> 
-                        <a href="modules/quanlylienhe/xuly.php?id=<?php echo $row['id']?>">Xóa</a>
+                        <a href="models/quanlylienhe/xuly.php?id=<?php echo $row['id']?>">Xóa</a>
                     </td>
                 </tr>
             <?php

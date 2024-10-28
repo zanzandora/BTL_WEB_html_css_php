@@ -15,7 +15,6 @@ if (isset($_POST['themdanhmuc'])) {
         echo '<script>window.location.href = "index.php?action=quanlydanhmucsanpham&query=them";</script>';
     }
     exit();
-    // header('location:../../index.php?action=quanlydanhmucsanpham&query=them');
 } elseif (isset($_POST['suadanhmuc'])) {
     $id = $_GET['iddanhmuc'];
     $sql_sua = "update danhmuc set ten = '" . $loaisanpham . "', thutu = '" . $thutu . "' where iddanhmuc = '" . $id . "' ";

@@ -16,9 +16,9 @@
     $madonhang = rand(0,999999);
     $sql = "insert into giohang (idkhachhang,madonhang,trangthai) value ('".$idkhachhang."', '".$madonhang."', 1)";
     $query = mysqli_query($connect,$sql);
-    // if (!$query) {
-    //     die("Lỗi khi chèn dữ liệu vào giohang: " . mysqli_error($connect));
-    // }
+    if (!$query) {
+        die("Lỗi khi chèn dữ liệu vào giohang: " . mysqli_error($connect));
+    }
     if($query){
         foreach($_SESSION['cart'] as  $id => $cart_item){
             $idsanham = $cart_item['id'];

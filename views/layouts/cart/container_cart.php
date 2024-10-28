@@ -32,19 +32,21 @@
                 <?php
                 if (isset($_SESSION['cart'])) {
                     include $_SERVER['DOCUMENT_ROOT'] . '/BTL_WEB_html_css_php/config/config.php';
-
+                    $gia_giam = 0;
+                   
+                    foreach ($_SESSION['cart'] as $cart_item) {
+                    tinhGiaGiam($cart_item['gia']);
                     $i = 0;
                     $tongtien = 0;
-                    foreach ($_SESSION['cart'] as $cart_item) {
                         if (isset($cart_item['soluong']) && isset($cart_item['gia'])) {
-                            $thanhtien = $cart_item['soluong'] * $cart_item['gia'];
+                            $thanhtien = $cart_item['soluong'] * $gia_giam;
                             $tongtien += $thanhtien;
                         } else {
                             $thanhtien = 0;
                         }
                         $i++;
                         $id = $cart_item['id'];
-                        $sql = "select * from sanpham where id = $id";
+                        $sql = "select sanpham.*, danhmuc.ten AS danhmuc_ten from sanpham,danhmuc where sanpham.iddanhmuc=danhmuc.iddanhmuc and sanpham.id='".$id."'";
                         $query = mysqli_query($connect, $sql);
                         $row = mysqli_fetch_array($query);
                 ?>
@@ -53,7 +55,7 @@
                                 <div
                                     class="products-added-into-cart__link-img"
                                     style="
-                                    background-image: url(<?php echo BASE_URL; ?>assets/img/<?php echo  $cart_item['hinhanh'] ?>);"></div>
+                                    background-image: url(<?php echo BASE_URL; ?>assets/img/goods/<?php echo  $cart_item['hinhanh'] ?>);"></div>
                             </a>
                             <div class="products-added-into-cart__name">
                                 <a href="" class="products-added-into-cart__name-link">
@@ -62,10 +64,11 @@
                             </div>
                             <div class="products-added-into-car__classify">
                                 Phân loại hàng: <br />
-                                <span>Ducati</span>
+                                <span><?php echo $cart_item['danhmuc_ten'] ?></span>
                             </div>
                             <div class="products-added-into-car__unit-price">
-                                <?php echo number_format($cart_item['gia'],0,',','.').' VNĐ' ?>
+                                <?php 
+                            echo number_format($gia_giam,0,',','.').' VNĐ' ?>
                             </div>
                             <div class="products-added-into-car__quantity">
                                 <div class="quantity-input">
@@ -79,7 +82,8 @@
                                 </div>
                             </div>
                             <div class="products-added-into-car__total-price">
-                                <?php echo number_format($thanhtien,0,',','.').' VNĐ' ?>
+                                <?php 
+                                echo number_format($thanhtien,0,',','.').' VNĐ' ?>
                             </div>
                             <div class="products-added-into-car__action">
                                 <a href="<?php echo BASE_URL; ?>models/add_into_cart.php?xoa=<?php echo $cart_item['id']?>" class="btn btn--primary action--delete">

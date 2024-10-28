@@ -14,7 +14,7 @@ $key = "";
         ?>
             <div class="grid__column-2-4">
                 <a class="product-item" href="app.php?view=product&id=<?php echo $row['id'] ?>">
-                    <div class="product-item__img" style="background-image: url(<?php echo BASE_URL; ?>assets/img/<?php echo $row['hinhanh'] ?>);"></div>
+                    <div class="product-item__img" style="background-image: url(<?php echo BASE_URL; ?>assets/img/goods/<?php echo $row['hinhanh'] ?>);"></div>
                     <h4 class="product-item__name">
                         <?php echo $row['tensanpham'] ?>
                     </h4>
@@ -35,9 +35,9 @@ $key = "";
                         <span class="product-item__sold">Đã bán: 88k</span>
                     </div>
                     <div class="product-item__origin">
-                        <span class="product-item__brand">Whoo</span>
+                        <span class="product-item__brand"><?php echo $row['nhasanxuat'] ?></span>
                         <div class="product-item__origin-name">
-                            Nhật Bản
+                            <?php echo $row['xuatsu'] ?>
                         </div>
                     </div>
                     <!-- <div class="product-item__favourite">

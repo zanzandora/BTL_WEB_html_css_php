@@ -16,28 +16,36 @@
                 <td><input type="text" name="nhasanxuat"></td>
             </tr>
             <tr>
+                <td>Xuất xứ</td>
+                <td><input type="text" name="xuatxu"></td>
+            </tr>
+            <tr>
                 <td>Hình ảnh</td>
                 <td><input type="file" name="hinhanh"></td>
+            </tr>
+            <tr>
+                <td>Màu</td>
+                <td><input type="text" name="mau"></td>
             </tr>
             <tr>
                 <td>Khối lượng</td>
                 <td><input type="text" name="khoiluong"></td>
             </tr>
             <tr>
-                <td>Dung tích xăng</td>
-                <td><input type="text" name="dungtich"></td>
+                <td>Kích cỡ</td>
+                <td><input type="text" name="kichco"></td>
             </tr>
             <tr>
-                <td>Động cơ</td>
-                <td><input type="text" name="dongco"></td>
+                <td>Chất liệu</td>
+                <td><input type="text" name="chatlieu"></td>
             </tr>
             <tr>
-                <td>Công suất tối đa</td>
-                <td><input type="text" name="congsuat"></td>
+                <td>Đế giày</td>
+                <td><input type="text" name="degiay"></td>
             </tr>
             <tr>
-                <td>Mô-men cực đại</td>
-                <td><input type="text" name="momen"></td>
+                <td>Cao</td>
+                <td><input type="text" name="cao"></td>
             </tr>
             <tr>
                 <td>Giá sản phẩm</td>
