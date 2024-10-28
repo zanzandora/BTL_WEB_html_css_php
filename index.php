@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://kit.fontawesome.com/8e521e1169.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/login_resgister.css">
 </head>
+
 <body>
     <div class="container">
         <div class="singin-singup">
@@ -28,8 +30,34 @@
                 ?>
                 <input type="submit" name="login" value="Sign In" class="btn">
                 <p class="social-text">Are you an admin ? <a href="./admin/login_admin.php">Click here</a></p>
-                
+                <p class="social-text">Forgot your password? <a href="#" onclick="swapForm()">Click here to reset</a></p>
+
             </form>
+
+            <!-- Form Đổi mật khẩu (ẩn ban đầu) -->
+            <form action="models/changed_password.php" class="reset-password-form" method="post" style="display: none;">
+                <h2 class="title">Reset Password</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="repassword" placeholder="New Password" required>
+                </div>
+                <input type="submit" name="reset_password" value="Reset Password" class="btn">
+                <p class="social-text">Remember your password? <a href="#" onclick="swapForm()">Click here to sign in</a></p>
+                <p id="error-message" style="color: red"></p>
+            </form>
+
             <form action="models/register.php" class="sign-up-form" method="post">
                 <h2 class="title">Sign Up</h2>
                 <div class="input-field">
@@ -58,8 +86,8 @@
                 </div>
 
                 <input type="submit" name="register" value="Sign Up" class="btn">
-                
-                
+
+
             </form>
         </div>
         <div class="panels-container">
@@ -90,5 +118,7 @@
         </div>
     </div>
     <script src="./assets/js/animationLogin.js"></script>
+    <script src="./assets/js/swapForm.js"></script>
 </body>
+
 </html>

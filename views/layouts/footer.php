@@ -68,7 +68,7 @@
                 </li>
               </ul>
             </div>
-            <div class="grid__column-2-4">
+            <!-- <div class="grid__column-2-4">
               <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
               <div class="footer__download">
                 <img src="./assets/img/QR_code.png" alt="Download QR" class="footer__download-qr">
@@ -77,7 +77,7 @@
                   <img src="./assets/img/app_store.png" alt="App Store" class="footer__download-app-img">
                 </div>
               </div>
-            </div>
+            </div> -->
         </div>
         </div>
 

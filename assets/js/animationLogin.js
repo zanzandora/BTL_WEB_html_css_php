@@ -12,3 +12,4 @@ signUpBtn.addEventListener('click', () => {
 
   container.classList.add('sign-up--mode');
 });
+

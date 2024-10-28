@@ -8,7 +8,11 @@
     $rowtittle = mysqli_fetch_array($query2);
 
     if (mysqli_num_rows($query1) == 0) {
-        echo "<p>Hiện tại không có sản phẩm nào trong danh mục này.</p>";
+        echo '<div class="header__cart-list--empty">
+                <img
+                    src="./assets/img/product-not-found.jpg"
+                    alt=""
+                    class="no_cart__img" /';
     } else {
 ?>
         <div class="home-filter">

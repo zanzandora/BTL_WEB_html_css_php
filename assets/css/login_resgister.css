@@ -65,6 +65,10 @@ form.sign-up-form{
     transition: .5s ease-in-out;
     transition-delay: 1;
 }
+form.eset-password-form{
+    transition: .5s ease-in-out;
+    transition-delay: 1;
+}
 .title{
     font-size: 35px;
     color: #df4adf;
