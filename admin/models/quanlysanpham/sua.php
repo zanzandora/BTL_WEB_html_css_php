@@ -2,6 +2,18 @@
     $id = $_GET['id'];
     $sql = "select * from sanpham where id = '".$id."' limit 1";
     $query = mysqli_query($connect,$sql);
+
+    // Lấy tất cả kích thước từ bảng `sizes`
+    $sql_sizes = "SELECT * FROM sizes";
+    $sizes_result = mysqli_query($connect, $sql_sizes);
+
+     // Lấy các kích thước hiện tại của sản phẩm từ bảng `product_sizes`
+     $sql_product_sizes = "SELECT idsanpham FROM sanpham_size WHERE idsanpham = '".$id."'";
+     $product_sizes_result = mysqli_query($connect, $sql_product_sizes);
+     $selected_sizes = [];
+     while ($product_size_row = mysqli_fetch_array($product_sizes_result)) {
+         $selected_sizes[] = $product_size_row['idsanpham'];
+     }
 ?>
 <p>Sửa sản phẩm</p>
 <table width = "100%" border = "1" style="border-collapse: collapse;">
@@ -41,8 +53,14 @@
             <td><input type="text" name="khoiluong" value="<?php echo $row['khoiluong'] ?>"></td>
         </tr>
         <tr>
-            <td>Kích cỡ</td>
-            <td><input type="text" name="kichco" value="<?php echo $row['kichco'] ?>"></td>
+            <td>Kích thước (Sizes)</td>
+            <td>
+                <?php while ($size = mysqli_fetch_array($sizes_result)) { ?>
+                    <input type="checkbox" name="sizes[]" value="<?php echo $size['id']; ?>" 
+                        <?php echo in_array($size['id'], $selected_sizes) ? 'checked' : ''; ?>>
+                    <?php echo $size['size_name']; ?>
+                <?php } ?>
+            </td>
         </tr>
         <tr>
             <td>Chất liệu</td>

@@ -1,7 +1,16 @@
 <?php
 
-    $sql = "select * from sanpham,danhmuc where sanpham.iddanhmuc=danhmuc.iddanhmuc order by sanpham.id DESC";
-    $query = mysqli_query($connect,$sql);
+$sql = "SELECT sanpham.*, danhmuc.ten, GROUP_CONCAT(sizes.size_name  ORDER BY sizes.size_name SEPARATOR ', ') as sizes
+FROM sanpham
+JOIN danhmuc ON sanpham.iddanhmuc = danhmuc.iddanhmuc
+LEFT JOIN sanpham_size ON sanpham.id = sanpham_size.idsanpham
+LEFT JOIN sizes ON sanpham_size.idsize = sizes.id
+GROUP BY sanpham.id
+ORDER BY sanpham.id DESC";
+$query = mysqli_query($connect, $sql);
+if (!$query) {
+    die("Lỗi truy vấn: " . mysqli_error($connect));
+}
 ?>
 <div class="table-container">
 
@@ -41,7 +50,7 @@
                     <td><img src="<?php echo BASE_URL; ?>assets/img/goods/<?php echo $row['hinhanh']?>" width="100"></td>
                     <td><?php echo $row['mau']?></td>
                     <td><?php echo $row['khoiluong']?></td>
-                    <td><?php echo $row['kichco']?></td>
+                    <td><?php echo $row['sizes'] ? $row['sizes'] : 'Chưa có kích cỡ'; ?></td>
 
                     <td><?php echo $row['chatlieu']?></td>
                     <td><?php echo $row['degiay']?></td>

@@ -1,6 +1,6 @@
 <div class="header-with-search">
     <div class="header__banner">
-        <a href="/" class="header__banner-link">
+        <a href="app.php" class="header__banner-link">
             <img
                 src="./assets/img/thiet-ke-logo-cua-hang-giay-dep.jpg"
                 alt=""

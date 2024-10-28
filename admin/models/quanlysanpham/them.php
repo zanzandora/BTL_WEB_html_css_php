@@ -31,10 +31,21 @@
                 <td>Khối lượng</td>
                 <td><input type="text" name="khoiluong"></td>
             </tr>
-            <tr>
-                <td>Kích cỡ</td>
-                <td><input type="text" name="kichco"></td>
-            </tr>
+            <td>Chọn Size</td>
+                <td>
+                    <?php
+                    // Lấy danh sách các size từ bảng `sizes`
+                    $sizeQuery = "SELECT * FROM sizes";
+                    $sizeResult = mysqli_query($connect, $sizeQuery);
+
+                    // Tạo các checkbox cho từng size
+                    while ($sizeRow = mysqli_fetch_array($sizeResult)) {
+                    ?>
+                        <label>
+                            <input type="checkbox" name="sizes[]" value="<?php echo $sizeRow['id']; ?>"> <?php echo $sizeRow['size_name']; ?>
+                        </label>
+                    <?php } ?>
+                </td>
             <tr>
                 <td>Chất liệu</td>
                 <td><input type="text" name="chatlieu"></td>
