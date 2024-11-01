@@ -1435,24 +1435,22 @@
 
 .contact-body__group .contact-body__input {
   width: 100%;
-  margin-top: 16px;
-  height: 50px;
-  padding: 0 12px;
-  font-size: 1.3rem;
-  border: 1px solid var(--border-color);
+  margin-top: 26px;
+  height: 40px;
   border-radius: 5px;
   outline: none;
 }
 .contact-body__input-textarea {
   width: 100%;
-  margin-top: 16px;
+  margin-top: 26px;
   padding: 10.8px;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   outline: none;
   height: 150px;
   resize: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 .contact-body__input-textarea:hover,
 .contact-body__input:focus {
@@ -1511,5 +1509,6 @@
 .product-total-price__action--buy a{
   padding: 10px 20px;
 }
+
 
 

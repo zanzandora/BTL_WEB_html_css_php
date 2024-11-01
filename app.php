@@ -17,8 +17,10 @@
   <!-- RESET CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css" />
-  <link rel="stylesheet" href="./assets/css/base.css" />
-  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/css/base.css?v=<?php echo time(); ?>" />
+  <link rel="stylesheet" href="./assets/css/main.css?v=<?php echo time(); ?>" />
+  <link rel="stylesheet" href="./assets/css/custome_input_text.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="./assets/css/animation_boring_loader.css?v=<?php echo time(); ?>">
   <?php
   $view = isset($_GET['view']) ? $_GET['view'] : 'home';
 

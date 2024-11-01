@@ -37,10 +37,7 @@
             <!-- Form Đổi mật khẩu (ẩn ban đầu) -->
             <form action="models/changed_password.php" class="reset-password-form" method="post" style="display: none;">
                 <h2 class="title">Reset Password</h2>
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="username" placeholder="Username" required>
-                </div>
+                
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
                     <input type="email" name="email" placeholder="Email" required id="email">
@@ -116,7 +113,7 @@
     </div>
     <script src="./assets/js/animationLogin.js"></script>
     <script src="./assets/js/swapForm.js"></script>
-    <script src="./assets/js/toast_message.js"></script>
+    <script src="./assets/js/toast_message.js?v=1.0.1"></script>
 </body>
 
 </html>

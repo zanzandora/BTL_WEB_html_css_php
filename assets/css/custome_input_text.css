@@ -1,0 +1,72 @@
+
+.contact-body__group {
+    position: relative;
+  }
+  
+  .contact-body__group .contact-body__input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+  }
+  
+  .contact-body__group .contact-body__input:focus {
+    outline: none;
+  }
+  
+  .contact-body__group .label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+  }
+  
+  .contact-body__group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * 0.05s);
+  }
+  
+  .contact-body__group .contact-body__input:focus ~ label .label-char,
+  .contact-body__group .contact-body__input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #5264ae;
+  }
+  
+  .contact-body__group .bar {
+    position: relative;
+    display: block;
+  }
+  
+  .contact-body__group .bar:before,
+  .contact-body__group .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264ae;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  .contact-body__group .bar:before {
+    left: 50%;
+  }
+  
+  .contact-body__group .bar:after {
+    right: 50%;
+  }
+  
+  .contact-body__group .contact-body__input:focus ~ .bar:before,
+  .contact-body__group .contact-body__input:focus ~ .bar:after {
+    width: 50%;
+  }
+  

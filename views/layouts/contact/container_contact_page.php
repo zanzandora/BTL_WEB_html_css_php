@@ -33,8 +33,14 @@
                                     name="hoten"
                                     id=""
                                     class="contact-body__input"
-                                    placeholder="Tên của bạn" 
-                                    required/>
+                                    required />
+                                <span class="bar"></span>
+                                <label class="label">
+                                    <span style="--index: 0" class="label-char">N</span>
+                                    <span style="--index: 1" class="label-char">a</span>
+                                    <span style="--index: 2" class="label-char">m</span>
+                                    <span style="--index: 2" class="label-char">e</span>
+                                </label>
                             </div>
                             <div class="contact-body__group">
                                 <input
@@ -42,8 +48,15 @@
                                     name="email"
                                     id=""
                                     class="contact-body__input"
-                                    placeholder="Email của bạn" 
-                                    required/>
+                                    required />
+                                    <span class="bar"></span>
+                                <label class="label">
+                                    <span style="--index: 0" class="label-char">E</span>
+                                    <span style="--index: 1" class="label-char">m</span>
+                                    <span style="--index: 2" class="label-char">a</span>
+                                    <span style="--index: 3" class="label-char">i</span>
+                                    <span style="--index: 3" class="label-char">l</span>
+                                </label>
                             </div>
                             <div class="contact-body__group">
                                 <input
@@ -51,8 +64,15 @@
                                     name="sodienthoai"
                                     id=""
                                     class="contact-body__input"
-                                    placeholder="Số điện thoại" 
-                                    required/>
+                                    required />
+                                    <span class="bar"></span>
+                                <label class="label">
+                                    <span style="--index: 0" class="label-char">P</span>
+                                    <span style="--index: 1" class="label-char">h</span>
+                                    <span style="--index: 2" class="label-char">o</span>
+                                    <span style="--index: 3" class="label-char">n</span>
+                                    <span style="--index: 3" class="label-char">e</span>
+                                </label>
                             </div>
                             <div class="contact-body__group">
                                 <textarea

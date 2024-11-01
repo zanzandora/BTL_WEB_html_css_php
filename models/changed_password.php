@@ -23,17 +23,10 @@ if (isset($_POST['reset_password'])) {
                 window.location.href = '../index.php';
             </script>";
             exit();  // Dừng thực thi script sau khi chuyển hướng
-        } else {
-            echo "<script>
-                sessionStorage.setItem('toast_message', 'Mật khẩu hoặc email không đúng');
-                sessionStorage.setItem('toast_type', 'error');
-                window.location.href = '../index.php';
-            </script>";
-            exit();
-        }
+        } 
     } else {
         echo "<script>
-                sessionStorage.setItem('toast_message', 'Mật khẩu hoặc email không đúng');
+            sessionStorage.setItem('toast_message', 'Mật khẩu hoặc email không đúng');
             sessionStorage.setItem('toast_type', 'error');
             sessionStorage.setItem('input_email', '$email');
             sessionStorage.setItem('input_old_password', '$old_password');

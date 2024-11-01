@@ -12,5 +12,3 @@
     margin: auto;">
     </div>
 </main>
-<?php echo "ID khách hàng: " . $_SESSION['id']; 
-        ?>

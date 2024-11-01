@@ -9,9 +9,6 @@
     if (!isset($_SESSION['id']) || !isset($_SESSION['cart'])) {
         die('Lỗi: Không có thông tin khách hàng hoặc giỏ hàng.');
     }
-    
-
-    
     $idkhachhang = $_SESSION['id'];
     $madonhang = rand(0,999999);
     $sql = "insert into giohang (idkhachhang,madonhang,trangthai) value ('".$idkhachhang."', '".$madonhang."', 1)";
@@ -28,6 +25,8 @@
             mysqli_query($connect,$sql2);
         }
     }
+    // *Xóa hết các product trong giỏ hàng khi đã thanh toán
+    unset($_SESSION['cart']);
     
     header("Location:".BASE_URL."app.php?view=thanks_for_buying");
 ?>
