@@ -27,6 +27,7 @@ while (file_exists($target_file)) {
     $target_file = $target_directory . $hinhanh;
     $counter++;
 }
+
 $mau = $_POST['mau'];
 $khoiluong = $_POST['khoiluong'];
 $kichco = isset($_POST['sizes']) ? $_POST['sizes'] : [];
@@ -40,7 +41,7 @@ $danhmuc = $_POST['danhmuc'];
 
 if (isset($_POST['themsanpham'])) {
     $sql_them = "insert into sanpham(masanpham, tensanpham, nhasanxuat, xuatsu, hinhanh, mau, khoiluong, kichco, chatlieu, degiay, cao, gia, trangthai, iddanhmuc) value 
-        ('" . $masanpham . "', '" . $tensanpham . "', '" . $nhasanxuat . "', '" . $xuatxu . "', '" . $hinhanh . "', '" . $mau . "', '" . $khoiluong . "', '" . $kichco . "', '" . $chatlieu . "', '" . $degiay . "', '" . $cao . "', '" . $gia . "', '" . $trangthai . "', '" . $danhmuc . "')";
+        ('" . $masanpham . "', '" . $tensanpham . "', '" . $nhasanxuat . "', '" . $xuatxu . "', '" . $hinhanh . "', '" . $mau . "', '" . $khoiluong . "', '" . $kichco_string . "', '" . $chatlieu . "', '" . $degiay . "', '" . $cao . "', '" . $gia . "', '" . $trangthai . "', '" . $danhmuc . "')";
     mysqli_query($connect, $sql_them);
     move_uploaded_file($hinhanh_tmp, '' . BASE_PATH . 'assets/img/goods/' . $hinhanh);
 
@@ -51,54 +52,50 @@ if (isset($_POST['themsanpham'])) {
     if (isset($_POST['sizes'])) {
         $sizes = $_POST['sizes'];
         foreach ($sizes as $size_id) {
-            $sizeInsertQuery = "INSERT INTO product_sizes (idsanpham, idsize) VALUES ('$product_id', '$size_id')";
+            $sizeInsertQuery = "INSERT INTO sanpham_size (idsanpham, idsize) VALUES ('$product_id', '$size_id')";
             mysqli_query($connect, $sizeInsertQuery);
         }
     }
     header('location:../../index.php?action=quanlysanpham&query=them');
 } elseif (isset($_POST['suasanpham'])) {
     $id = $_GET['id'];
-    if ($hinhanh != '') {
+    // Lấy thông tin ảnh cũ từ CSDL
+    $sql_get_img = "SELECT * FROM sanpham WHERE id = '" . $id . "' LIMIT 1";
+    $query = mysqli_query($connect, $sql_get_img);
+    $row = mysqli_fetch_array($query);
+    $old_hinhanh = $row['hinhanh']; // Ảnh cũ
 
-        $sql_del_img = "SELECT * FROM sanpham WHERE id = '" . $id . "' LIMIT 1";
-        $query = mysqli_query($connect, $sql_del_img);
-        $row = mysqli_fetch_array($query);
-        if ($row && !empty($row['hinhanh'])) {
-            unlink('' . BASE_PATH . 'assets/img/goods/' . $row['hinhanh']);
+    // Kiểm tra có ảnh mới được tải lên không
+    if (!empty($hinhanh_tmp)) {
+        // Xóa ảnh cũ nếu có ảnh mới
+        if ($old_hinhanh && file_exists($target_directory . $old_hinhanh)) {
+            unlink($target_directory . $old_hinhanh);
         }
-        $sql_sua = "UPDATE sanpham SET 
-                        masanpham = '" . $masanpham . "', 
-                        tensanpham = '" . $tensanpham . "', 
-                        nhasanxuat = '" . $nhasanxuat . "', 
-                        xuatsu = '" . $xuatxu . "',
-                        hinhanh = '" . $hinhanh . "', 
-                        mau = '" . $mau . "',
-                        khoiluong = '" . $khoiluong . "', 
-                        kichco = '" . $kichco_string . "', 
-                        chatlieu = '" . $chatlieu . "', 
-                        degiay = '" . $degiay . "', 
-                        cao = '" . $cao . "', 
-                        gia = '" . $gia . "', 
-                        trangthai = '" . $trangthai . "', 
-                        iddanhmuc = '" . $danhmuc . "' 
-                    WHERE id = '" . $id . "'";
+        // Cập nhật hình ảnh trong cơ sở dữ liệu với ảnh mới
+        move_uploaded_file($hinhanh_tmp, $target_file);
     } else {
-        $sql_sua = "UPDATE sanpham SET 
-                        masanpham = '" . $masanpham . "', 
-                        tensanpham = '" . $tensanpham . "', 
-                        nhasanxuat = '" . $nhasanxuat . "', 
-                        xuatsu = '" . $xuatxu . "',
-                        mau = '" . $mau . "',
-                        khoiluong = '" . $khoiluong . "', 
-                        kichco = '" . $kichco . "', 
-                        chatlieu = '" . $chatlieu . "', 
-                        degiay = '" . $degiay . "', 
-                        cao = '" . $cao . "', 
-                        gia = '" . $gia . "', 
-                        trangthai = '" . $trangthai . "', 
-                        iddanhmuc = '" . $danhmuc . "' 
-                    WHERE id = '" . $id . "'";
+        // Nếu không tải ảnh mới, giữ lại ảnh cũ
+        $hinhanh = $old_hinhanh;
     }
+
+    // Cập nhật thông tin sản phẩm
+    $sql_sua = "UPDATE sanpham SET 
+                    masanpham = '" . $masanpham . "', 
+                    tensanpham = '" . $tensanpham . "', 
+                    nhasanxuat = '" . $nhasanxuat . "', 
+                    xuatsu = '" . $xuatxu . "',
+                    hinhanh = '" . $hinhanh . "', 
+                    mau = '" . $mau . "',
+                    khoiluong = '" . $khoiluong . "', 
+                    kichco = '" . $kichco_string . "', 
+                    chatlieu = '" . $chatlieu . "', 
+                    degiay = '" . $degiay . "', 
+                    cao = '" . $cao . "', 
+                    gia = '" . $gia . "', 
+                    trangthai = '" . $trangthai . "', 
+                    iddanhmuc = '" . $danhmuc . "' 
+                WHERE id = '" . $id . "'";
+    
     mysqli_query($connect, $sql_sua);
 
     $delete_sizes_query = "DELETE FROM sanpham_size WHERE idsanpham = '$id'";
@@ -133,11 +130,11 @@ if (isset($_POST['themsanpham'])) {
 
     $sql_del_img = "SELECT * FROM sanpham WHERE id = '" . $id . "' LIMIT 1";
     $query = mysqli_query($connect, $sql_del_img);
-    // while ($row = mysqli_fetch_array($query)) {
-    //     if (!empty($row['hinhanh'])) {
-    //         unlink('../../../assets/img/goods/' . $row['hinhanh']);
-    //     }
-    // }
+    while ($row = mysqli_fetch_array($query)) {
+        if (!empty($row['hinhanh'])) {
+            unlink('' . BASE_PATH . 'assets/img/goods/' . $row['hinhanh']);
+        }
+    }
 
     // Xóa các kích thước liên quan đến sản phẩm trong bảng `product_sizes`
     $sql_xoa_sizes = "DELETE FROM sanpham_size WHERE idsanpham = '" . $id . "'";

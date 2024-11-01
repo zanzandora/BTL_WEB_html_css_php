@@ -912,7 +912,7 @@
 .product-item__img {
   padding-top: 100%;
   background-repeat: no-repeat;
-  /* background-position:top center; */
+  background-position: center;
   background-size: contain;
 }
 .product-item__name {

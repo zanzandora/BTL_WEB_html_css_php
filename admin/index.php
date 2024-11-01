@@ -13,8 +13,10 @@ define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/admin_pages.css">
-<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/admin_table.css">
+  <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css" />
+
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/admin_pages.css?v=<?php echo time(); ?>">
 
 </head>
 

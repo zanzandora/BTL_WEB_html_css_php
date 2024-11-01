@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://kit.fontawesome.com/8e521e1169.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/login_resgister.css">
+    <link rel="stylesheet" href="./assets/css/login_resgister.css?v=<?php echo time(); ?>">
 </head>
 
 <body>

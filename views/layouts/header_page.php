@@ -28,22 +28,6 @@
                     </ul>
                 </div> -->
             </div>
-            <!-- <div class="header__search-select">
-            <span>Trong shop</span>
-            <i class="fa-regular fa-circle-down"></i>
-
-            <ul class="header__search-option">
-                <li
-                    class="header__search-option-item header__search-option-item--active">
-                    <span>Trong shop</span>
-                    <i class="fa-solid fa-check"></i>
-                </li>
-                <li class="header__search-option-item">
-                    <span>Ngoài shop</span>
-                    <i class="fa-solid fa-check"></i>
-                </li>
-            </ul>
-        </div> -->
             <button type="submit" class="header__search-btn" name="search">
 
                 <i class="fa-solid fa-search"></i>

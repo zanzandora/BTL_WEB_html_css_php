@@ -44,10 +44,10 @@ $key = "";
                         <i class="fa-solid fa-check"></i>
                         <span>Yêu thích</span>
                     </div> -->
-                    <!-- <div class="product-item__sell-off">
-                        <span class="product-item__sell-off-percent">43%</span>
+                    <div class="product-item__sell-off">
+                        <span class="product-item__sell-off-percent">40%</span>
                         <span class="product-item__sell-off-text">Giảm</span>
-                    </div> -->
+                    </div>
                 </a>
             </div>
         <?php } ?>

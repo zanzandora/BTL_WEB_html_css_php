@@ -3,7 +3,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif;
+  color: #384047;
 }
 .wrapper{
     width: 100%;
@@ -46,7 +47,7 @@ nav{
     
 }
 .main .main__wrapper{
-    overflow: scroll ;
+    overflow: scroll ;  
 }
 /* ! nav bar admin */
 .admin-list{
@@ -65,6 +66,8 @@ nav{
     align-items: center;
 }
 .admin-list-item__link{
+    text-transform: uppercase;
+    letter-spacing: 5px;
     padding: 30px 0;
     color: white;
     display: block;
@@ -83,3 +86,217 @@ nav{
     
 }
 
+
+
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+  .title{
+      font-size: 2rem;
+  }
+  
+  
+  
+  .table-controllers,
+  .table-sua,
+  .table-them{
+      border-collapse: collapse;
+      width: 100%;
+  }
+  /* ! THem */
+  .form-control--themdanhmucsp{
+      width: 100%;
+  }
+  /* ! Sua */
+  
+  /* ! liệt kê */
+  .form-control--lietke {
+  }
+  .link-remove,
+  .link-edit {
+      color: #666;
+  }
+  
+  /* ! liet ke san pham */
+  .table-lietkesp{
+      
+  }
+  
+  /* *Table */
+  table {
+    border-collapse: collapse;
+    font-family: 'Nunito', sans-serif;
+    color: #384047;
+    max-width: 960px;
+    margin: 10px auto;
+    border: none;
+  }
+  
+  
+  thead th {
+    font-weight: 400;
+    background: #8a97a0;
+    color: #FFF;
+    text-align: center;
+  }
+  
+  tr {
+    background: #f4f7f8;
+    border-bottom: 1px solid #FFF;
+    margin-bottom: 5px;
+  }
+  
+  tr:nth-child(even) {
+    background: #e8eeef;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    font-weight: 300;
+  }
+  tfoot tr {
+    background: none;
+  }
+  
+  tfoot td {
+    padding: 10px 2px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #8a97a0;
+    font-weight: 600;
+  }
+
+
+  /* *CUSTOME BUTTON */
+  .button {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #323232;
+    background-color: #323232;
+  }
+  
+  .button, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .button .button__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .button .button__icon {
+    width: 30px;
+    color: white;
+    position: absolute;
+    right: 55%;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #323232;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  
+  .button:hover {
+    background: #323232;
+  }
+  
+  .button:hover .button__text {
+    color: transparent;
+  }
+  
+  .button:hover .button__icon {
+    width: 0;
+    transform: translateX(10px);
+  }
+  
+  .button:active .button__icon {
+    background-color: #323232;
+  }
+  
+  .button:active {
+    border: 1px solid #323232;
+  }
+
+  
+.file-input__input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .file-input__label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 12px;
+    background-color: black ;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  }
+  
+  .file-input__label svg {
+    height: 16px;
+    margin-right: 4px;
+  }
+  
+
+  /* From Uiverse.io by PriyanshuGupta28 */ 
+.input[type="checkbox"] {
+    display: none;
+  }
+  
+  
+    /* Style for the custom checkbox */
+  .custom-checkbox {
+    display: inline-block;
+    width:10px;
+    height:10px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+    /* Style for the custom checkmark */
+  .custom-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 7px;
+    background-color: #333;
+    border-radius: 2px;
+    opacity: 0;
+  }
+  
+    /* Show the checkmark when checkbox is checked */
+  .input[type="checkbox"]:checked + .custom-checkbox::after {
+    opacity: 1;
+  }
+  .size__name{
+    margin: 0 5px;
+  }

@@ -24,10 +24,10 @@
                   <a href="" class="footer-item__link">21103100963</a>
                 </li>
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Tuyển dụng</a>
+                  <a href="" class="footer-item__link">21103100378</a>
                 </li>
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Điều khoản TickID</a>
+                  <a href="" class="footer-item__link">21103100393</a>
                 </li>
               </ul>
             </div>
@@ -39,10 +39,10 @@
                   <a href="" class="footer-item__link">13 - 8 - 2003</a>
                 </li>
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Trang điểm môi</a>
+                  <a href="" class="footer-item__link">19 - 12 - 2003</a>
                 </li>
                 <li class="footer-item">
-                  <a href="" class="footer-item__link">Trang điểm mắt</a>
+                  <a href="" class="footer-item__link">20 - 08 - 2003</a>
                 </li>
               </ul>
             </div>
