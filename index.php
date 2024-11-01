@@ -43,17 +43,17 @@
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required id="email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required id="password">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="repassword" placeholder="New Password" required>
+                    <input type="password" name="repassword" placeholder="New Password" required id="repassword">
                 </div>
-                <input type="submit" name="reset_password" value="Reset Password" class="btn">
+                <button type="submit" name="reset_password" class="btn">Reset Password</button>
                 <p class="social-text">Remember your password? <a href="#" onclick="swapForm()">Click here to sign in</a></p>
                 <p id="error-message" style="color: red"></p>
             </form>
@@ -95,10 +95,7 @@
                 <div class="content">
                     <h3>member of our website?</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-                        libero neque. Vestibulum ante ipsum primis in faucibus orci luctus
-                        et ultrices posuere cubilia Curae; Donec velit neque,
-                        convallis eget, eleifend luctus, ultricies eu, nibh.
+                    Sign in to shop quickly, track orders easily and enjoy many attractive offers
                     </p>
                     <button class="btn" id="sign-in-btn">Sign in</button>
                 </div>
@@ -107,18 +104,19 @@
                 <div class="content">
                     <h3>New to our website?</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-                        libero neque. Vestibulum ante ipsum primis in faucibus orci luctus
-                        et ultrices posuere cubilia Curae; Donec velit neque,
-                        convallis eget, eleifend luctus, ultricies eu, nibh.
+                    Create an account now to discover exciting features and the best shopping experience!
                     </p>
                     <button class="btn" id="sign-up-btn">Sign up</button>
                 </div>
             </div>
         </div>
     </div>
+    <div id="toast">
+        
+    </div>
     <script src="./assets/js/animationLogin.js"></script>
     <script src="./assets/js/swapForm.js"></script>
+    <script src="./assets/js/toast_message.js"></script>
 </body>
 
 </html>

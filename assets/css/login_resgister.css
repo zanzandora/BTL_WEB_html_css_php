@@ -220,3 +220,84 @@ transform: translateX(0);
 .container.sign-up--mode .left-panel{ 
     pointer-events: all;
 }
+
+
+/* *Toast Message */
+
+#toast{
+    position: fixed;
+    top:32px;
+    right: 32px;
+    z-index: 6;
+    
+}
+.toast{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    border-left: 4px solid black ;
+    box-shadow: 0px 5px 9px gray;
+    max-width: 350px;
+    min-width: 350px;
+    transition: all linear .3s;
+    
+}
+@keyframes slideInLeft {
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 32px)) ;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    to{
+        opacity: 0;
+    }
+}
+.toast+.toast{
+    margin-top: 20px;
+}
+.toast__icon{
+    font-size: 24px;
+}
+.toast__body{
+    flex-grow: 1;
+}
+.toast__icon,
+.toast__body{
+    padding: 0 15px;
+}
+.toast__title{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+.toast__msg{
+    margin-bottom: 7px;
+    margin-top: 3px;
+}
+.toast__close{
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.toast__close:hover{
+    opacity: 0.7;
+}
+.toast--success{
+    border-color: rgb(143, 222, 23);
+}
+.toast--infor{
+    border-color: rgb(34, 34, 217);
+}
+.toast--warning{
+    border-color: rgb(232, 176, 72);
+}
+.toast--error{
+    border-color: red;
+}

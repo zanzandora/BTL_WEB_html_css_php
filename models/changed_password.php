@@ -2,9 +2,9 @@
 include("../config/config.php");
 
 if (isset($_POST['reset_password'])) {
-    $email = $_POST['email'];
-    $new_password =$_POST['repassword'];
-    $old_password = $_POST['password'];
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $old_password = isset($_POST['password']) ? $_POST['password'] : '';
+    $new_password = isset($_POST['repassword']) ? $_POST['repassword'] : '';
     $sql = "select * from dangky where email='" . $email . "' and matkhau='" . $old_password . "' limit 1";
     if (!$sql) {
         die("Lỗi khi chèn dữ liệu vào giohang: " . mysqli_error($connect));
@@ -16,13 +16,32 @@ if (isset($_POST['reset_password'])) {
         $query2 = mysqli_query($connect, $sql2);
 
         if ($query2) {
-            // Chuyển hướng về index.php sau khi đổi mật khẩu thành công
-            header("Location: ../index.php?message=success");
-            exit(); // Dừng thực thi script sau khi chuyển hướng
+            // Hiển thị thông báo thành công và chuyển về trang đăng nhập
+            echo "<script>
+                sessionStorage.setItem('toast_message', 'Đổi mật khẩu thành công!');
+                sessionStorage.setItem('toast_type', 'success');
+                window.location.href = '../index.php';
+            </script>";
+            exit();  // Dừng thực thi script sau khi chuyển hướng
         } else {
-            echo "<script>alert('Lỗi khi cập nhật mật khẩu');</script>";
+            echo "<script>
+                sessionStorage.setItem('toast_message', 'Mật khẩu hoặc email không đúng');
+                sessionStorage.setItem('toast_type', 'error');
+                window.location.href = '../index.php';
+            </script>";
+            exit();
         }
     } else {
-        echo "<script>alert('Email hoặc mật khẩu cũ không chính xác');</script>";
+        echo "<script>
+                sessionStorage.setItem('toast_message', 'Mật khẩu hoặc email không đúng');
+            sessionStorage.setItem('toast_type', 'error');
+            sessionStorage.setItem('input_email', '$email');
+            sessionStorage.setItem('input_old_password', '$old_password');
+            sessionStorage.setItem('input_new_password', '$new_password');
+            window.location.href = '../index.php';
+                
+                
+            </script>";
+            exit();
     }
 }

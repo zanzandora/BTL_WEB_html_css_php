@@ -6,7 +6,7 @@
     <title>admin</title>
     <script src="https://kit.fontawesome.com/8e521e1169.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/admin.css?v=<?php echo time(); ?>">
 
 </head>
 <body>
