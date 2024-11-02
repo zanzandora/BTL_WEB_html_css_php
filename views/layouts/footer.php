@@ -70,49 +70,14 @@
         </ul>
       </div>
       <div class="grid__column-2-4">
-      <div class="up">
-    <div class="loaders">
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-    </div>
-    <div class="loadersB">
-      <div class="loaderA">
-        <div class="ball0"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball1"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball2"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball3"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball4"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball5"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball6"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball7"></div>
-      </div>
-      <div class="loaderA">
-        <div class="ball8"></div>
-      </div>
-    </div>
-  </div>
+      <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+              <div class="footer__download">
+                <img src="./assets/img/qrcode_localhost.png" alt="Download QR" class="footer__download-qr" width="120%">
+                <div class="footer__download-app">
+                  <img src="./assets/img/google_play.png" alt="Google Play" class="footer__download-app-img">
+                  <img src="./assets/img/app_store.png" alt="App Store" class="footer__download-app-img">
+                </div>
+              </div>
       </div>
     </div>
   </div>

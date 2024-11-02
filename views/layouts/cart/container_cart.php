@@ -32,12 +32,12 @@
                 <?php
                 if (isset($_SESSION['cart'])) {
                     include $_SERVER['DOCUMENT_ROOT'] . '/BTL_WEB_html_css_php/config/config.php';
+                    
                     $gia_giam = 0;
-                   
+                    $tongtien = 0;
                     foreach ($_SESSION['cart'] as $cart_item) {
                     tinhGiaGiam($cart_item['gia']);
                     $i = 0;
-                    $tongtien = 0;
                         if (isset($cart_item['soluong']) && isset($cart_item['gia'])) {
                             $thanhtien = $cart_item['soluong'] * $gia_giam;
                             $tongtien += $thanhtien;

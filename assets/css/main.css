@@ -1094,7 +1094,7 @@
   display: flex;
 }
 .footer__download-qr {
-  width: 80px;
+  width: 100px;
   object-fit: contain;
   border: 1px solid var(--border-color);
 }
