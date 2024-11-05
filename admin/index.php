@@ -29,10 +29,7 @@ define('BASE_URL', 'http://localhost/BTL_WEB_html_css_php/');
         include("./layouts/menu.php");
         ?>
 
-        <?php
-        include("./layouts/header.php");
-
-        ?>
+        
     </nav>
     <div class="wrapper">
         <?php

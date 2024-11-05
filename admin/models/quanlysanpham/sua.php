@@ -15,7 +15,7 @@ while ($product_size_row = mysqli_fetch_array($product_sizes_result)) {
     $selected_sizes[] = $product_size_row['idsanpham'];
 }
 ?>
-<p>Sửa sản phẩm</p>
+<p class="title">Sửa sản phẩm</p>
 <table width="100%" border="1" style="border-collapse: collapse;">
     <?php
     while ($row = mysqli_fetch_array($query)) {

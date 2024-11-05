@@ -300,3 +300,37 @@ nav{
   .size__name{
     margin: 0 5px;
   }
+
+
+  /* *LOG OUT BTN */
+  .container-name {
+    text-align: right;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.example_c {
+    font-family: 'Open Sans';
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    font-size: 2rem;
+    width: 100%;
+    padding: 30px 0;
+
+    /* Makes the link take up the full width of the li */
+    height: 30px;
+    line-height: 30PX;
+}
+
+.example_c:hover {
+    color: #ffffff;
+    background: tomato;
+    transition: all 0.4s ease 0s;
+}

@@ -33,7 +33,10 @@ if (isset($_POST['themdanhmuc'])) {
 
     if ($row['count'] > 0) {
         // Nếu có sản phẩm liên kết, hiển thị thông báo và không xóa
-        echo "Không thể xóa danh mục này vì còn sản phẩm liên kết.";
+         echo "<script>
+            alert('Không thể xóa danh mục này vì còn sản phẩm liên kết.');
+            window.location.href = '" . BASE_URL . "admin/index.php?action=quanlydanhmucsanpham&query=them';
+        </script>";
     } else {
         // Tiến hành xóa danh mục
         $sql_xoa_danhmuc = "DELETE FROM danhmuc WHERE iddanhmuc = '" . $id . "'";
